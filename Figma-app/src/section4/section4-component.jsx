@@ -1,7 +1,7 @@
 import React from "react";
 import * as S from "./section4-style";
-import SofaImg from "./download (1).jpeg";
-import SwingBedImg from "./download (2).jpeg";
+import SofaImg from "./sofa.jpeg";
+import SwingBedImg from "./swingbed.jpeg";
 import { FiChevronLeft, FiChevronRight, FiTag } from "react-icons/fi";
 
 const products = [
