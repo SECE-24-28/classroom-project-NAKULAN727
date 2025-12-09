@@ -56,7 +56,7 @@
 async function fetchMultipleApis() {
   let urls = [
     "https://jsonplaceholder.typicode.com/users",
-    "https://jsonplaceholder.typicode.com/users",
+    "https://dummyjson.com/products",
   ];
   let promises = urls.map((item) => fetch(item).then((res) => res.json()));
   let data = await Promise.all(promises);
