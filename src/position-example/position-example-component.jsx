@@ -1,7 +1,14 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const PositionExampleComponent = ({ icon, color, title, content, index }) => {
+const PositionExampleComponent = ({
+  icon,
+  color,
+  title,
+  content,
+  index,
+  description,
+}) => {
   return (
     <div>
       <div className="box">
@@ -13,6 +20,11 @@ const PositionExampleComponent = ({ icon, color, title, content, index }) => {
           </div>
           <div className="value">{title}</div>
           <div className="name">{content}</div>
+          {description && (
+            <div className="description" style={{ color: color }}>
+              {description}
+            </div>
+          )}
         </div>
         <div className={`box__color${index + 1}`}></div>
       </div>

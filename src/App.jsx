@@ -12,6 +12,14 @@ import SymbolOfExcellenceComponent from "./Symbol-of-Excellence/symbol-component
 import FourOFourComponent from "./404-component/404-component";
 import UseStateComponent from "./usestate-1st/use-state-component";
 import UsestateformComponent from "./use-state-form/use-state-form-component";
+import AdditionOperationComponent from "./addition-operation-in-state/addition-operation-component";
+import MediaComponent from "./Clone/media-component";
+import ImpactComponent from "./Impact/impact-component";
+import ContactUsComponent from "./contact-us/contact-us-component";
+import PostionComponent from "./positioning/position-component";
+import PropsPracticeComponent from "./props-practice/props-practice-component";
+import SignupFormComponent from "./signup-form-api/signup-form-component";
+import SignupFormAdminComponent from "./signup-admin-form-api/signup-admin-form-component";
 
 function App() {
   return (
@@ -42,18 +50,39 @@ function App() {
       <Route
         path="/position-example"
         element={
-          <PositionExampleStyle gapLength="3rem">
-            {PositionData.map((item, index) => (
-              <PositionExampleComponent
-                key={index}
-                index={index}
-                icon={item.icon}
-                color={item.color}
-                title={item.title}
-                content={item.content}
-              />
-            ))}
-          </PositionExampleStyle>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              minHeight: "100vh",
+            }}
+          >
+            <h1
+              style={{
+                marginBottom: "3rem",
+                fontFamily: '"Work Sans", sans-serif',
+                fontSize: "40px",
+                fontWeight: "700",
+              }}
+            >
+              Trusted By
+            </h1>
+            <PositionExampleStyle gapLength="3rem" style={{ height: "auto" }}>
+              {PositionData.map((item, index) => (
+                <PositionExampleComponent
+                  key={index}
+                  index={index}
+                  icon={item.icon}
+                  color={item.color}
+                  title={item.title}
+                  content={item.content}
+                  description={item.description}
+                />
+              ))}
+            </PositionExampleStyle>
+          </div>
         }
       />
       <Route path="/our-courses" element={<OurCoursesComponent />} />
@@ -65,9 +94,24 @@ function App() {
       <Route path="*" element={<FourOFourComponent />} />
       <Route path="/use-state-practice" element={<UseStateComponent />} />
       <Route path="/use-state-form" element={<UsestateformComponent />} />
+      <Route
+        path="/addition-operation"
+        element={<AdditionOperationComponent />}
+      />
+      <Route path="/media" element={<MediaComponent />} />
+      <Route path="/impact" element={<ImpactComponent />} />
+      <Route path="/contact-us" element={<ContactUsComponent />} />
+      <Route path="/positioning" element={<PostionComponent />} />
+      <Route
+        path="/props-practice"
+        element={
+          <PropsPracticeComponent name="Test User" mobile="9876543210" />
+        }
+      />
+      <Route path="/signup-form" element={<SignupFormComponent />} />
+      <Route path="/signup-admin-form" element={<SignupFormAdminComponent />} />
     </Routes>
   );
 }
-
 
 export default App;

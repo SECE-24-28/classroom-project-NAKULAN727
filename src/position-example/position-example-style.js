@@ -4,11 +4,11 @@ export const PositionExampleStyle = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  gap: ${props => props.gapLength || "3rem"};
+  gap: ${(props) => props.gapLength || "3rem"};
   .box {
     //   position: absolute;
     position: relative;
-    background-color: white;
+    //   background-color: white;
     text-align: center;
     box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
     padding: 0.8rem;
@@ -39,7 +39,7 @@ export const PositionExampleStyle = styled.div`
     bottom: 0px;
     background-color: rgb(0, 197, 190);
   }
-    .box__color2 {
+  .box__color2 {
     border-radius: 10px;
     height: 50%;
     width: 100%;
@@ -47,11 +47,11 @@ export const PositionExampleStyle = styled.div`
     left: 0px;
     right: 0px;
     position: absolute;
-    top: initial;
-    bottom: 0px;
+    top: 0px;
+    bottom: initial;
     background-color: rgb(0, 189, 235);
   }
-    .box__color3 {
+  .box__color3 {
     border-radius: 10px;
     height: 50%;
     width: 100%;
@@ -63,7 +63,7 @@ export const PositionExampleStyle = styled.div`
     bottom: 0px;
     background-color: rgb(243, 176, 79);
   }
-     .box__color4 {
+  .box__color4 {
     border-radius: 10px;
     height: 50%;
     width: 100%;
@@ -71,8 +71,8 @@ export const PositionExampleStyle = styled.div`
     left: 0px;
     right: 0px;
     position: absolute;
-    top: initial;
-    bottom: 0px;
+    top: 0px;
+    bottom: initial;
     background-color: rgb(250, 63, 70);
   }
   .value {
@@ -86,9 +86,15 @@ export const PositionExampleStyle = styled.div`
     font-weight: 500;
     color: gray;
     font-family: "Work Sans", sans-serif;
-    text-transform: uppercase
+    text-transform: uppercase;
   }
-  .circular__parent1{
+  .description {
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 5px;
+    text-transform: uppercase;
+  }
+  .circular__parent1 {
     position: absolute;
     left: 50%;
     top: 0;
@@ -103,10 +109,10 @@ export const PositionExampleStyle = styled.div`
     translate: -50% -50%;
     font-size: 1.5em;
   }
-    .circular__parent2{
+  .circular__parent2 {
     position: absolute;
     left: 50%;
-    top: 0;
+    top: 100%;
     width: 90px;
     height: 90px;
     border-radius: 50%;
@@ -118,7 +124,7 @@ export const PositionExampleStyle = styled.div`
     translate: -50% -50%;
     font-size: 1.5em;
   }
-     .circular__parent3{
+  .circular__parent3 {
     position: absolute;
     left: 50%;
     top: 0;
@@ -133,10 +139,10 @@ export const PositionExampleStyle = styled.div`
     translate: -50% -50%;
     font-size: 1.5em;
   }
-     .circular__parent4{
+  .circular__parent4 {
     position: absolute;
     left: 50%;
-    top: 0;
+    top: 100%;
     width: 90px;
     height: 90px;
     border-radius: 50%;

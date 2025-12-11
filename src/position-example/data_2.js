@@ -21,12 +21,14 @@ export const PositionData = [
   {
     title: "1000+",
     content: "Study Materials",
+    description: "AGH LMS",
     icon: faBook,
     color: "rgb(243,176,79)",
   },
   {
-    title: "100000+",
+    title: "1,00,000",
     content: "Students",
+    description: "B2B:Placement Training",
     icon: faUserGraduate,
     color: "rgb(255,107,107)",
   },
