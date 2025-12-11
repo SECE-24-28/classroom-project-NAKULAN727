@@ -1,8 +1,8 @@
-const User = require("../models/user");
-exports.createUser = async (req, res) => {
+const Admin = require("../models/admin");
+exports.createAdmin = async (req, res) => {
   try {
     const { firstName, email } = req.body;
-    const creatUser = await User.insertOne({
+    const createAdmin = await Admin.insertOne({
       firstName: firstName,
       email: email,
     });
@@ -10,7 +10,7 @@ exports.createUser = async (req, res) => {
       success: true,
       message: "User is created successfully",
     });
-  } catch (e) {
+  } catch(e) {
     res.status(404).json({
       success: false,
       error: e,
@@ -18,10 +18,10 @@ exports.createUser = async (req, res) => {
   }
 };
 
-exports.createManyUsers = async (req, res) => {
+exports.createManyAdmins = async (req, res) => {
   try {
     const { details } = req.body;
-    const createUser = await User.insertMany(details);
+    const createAdmin = await Admin.insertMany(details);
     return res.status(200).json({
       success: true,
       message: "User is created successfully",
@@ -33,9 +33,9 @@ exports.createManyUsers = async (req, res) => {
     });
   }
 };
-exports.getAllUsers = async (req, res) => {
+exports.getAllAdmins = async (req, res) => {
   try {
-    const getDetails = await User.find();
+    const getDetails = await Admin.find();
     // console.log("The users details:", getDetails);
     return res.status(200).json({
       success: true,
@@ -51,7 +51,7 @@ exports.getAllUsers = async (req, res) => {
 exports.updateEmail = async (req, res) => {
   try {
     const { name, email } = req.body;
-    const updatethings = await User.updateOne(
+    const updatethings = await Admin.updateOne(
       { firstName: name },
       { $set: { email: email } }
     );
@@ -87,23 +87,23 @@ exports.getDetails = async (req, res) => {
     });
   }
 };
-exports.userRegister = async (req, res) => {
+exports.adminRegister = async (req, res) => {
   try {
     const { email, firstName, secondName, mobileNumber, password } = req.body;
 
-    const findUser = await User.findOne({
+    const findAdmin = await Admin.findOne({
       email: email,
       mobileNumber: mobileNumber,
     });
     //console.log("The find user:", findUser);
 
-    if (findUser) {
+    if (findAdmin) {
       return res.status(400).json({
         success: false,
         message: "User is already resigtered",
       });
     }
-    await User.create({
+    await Admin.create({
       email,
       firstName,
       secondName,
@@ -122,7 +122,7 @@ exports.userRegister = async (req, res) => {
   }
 };
 
-exports.getAllUserDetails = async (req, res) => {
+exports.getAllAdminDetails = async (req, res) => {
   try {
     console.log("HEllo world");
 
@@ -132,7 +132,7 @@ exports.getAllUserDetails = async (req, res) => {
     console.log("The email query:", email);
     console.log("Mobile:", mobile);
 
-    const getDetails = await User.find({ email, mobileNumber: mobile });
+    const getDetails = await Admin.find({ email, mobileNumber: mobile });
     if (!getDetails) {
       return res.status(404).json({
         success: false,
